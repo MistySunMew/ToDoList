@@ -1,0 +1,21 @@
+.todo {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: lightcoral;
+    width: 25%;
+    box-sizing: border-box;
+    padding: .5em;
+    border-radius: .5em;
+}
+
+.todo h3 {
+    margin: 0;
+}
+
+.todo p {
+    margin: 0;
+}
+
+.completed {
+    background-color: lightgreen;
+}
