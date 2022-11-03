@@ -40,7 +40,7 @@ function getToDoItem():ToDoItem {
     myItem.dueDate = new Date((<HTMLInputElement>$("due-date")).value);
 
     //get isCompleted
-    myItem.isCompleted = (<HTMLInputElement>$("task")).checked;
+    myItem.isCompleted = (<HTMLInputElement>$("is-complete")).checked;
 
     return myItem;
 }
@@ -57,8 +57,9 @@ function displayToDoItem(item:ToDoItem):void {
     let itemDate = document.createElement("p")
     itemDate.innerText = item.dueDate.toDateString();
 
-    //Creates a <div> element and if the ToDoItem is marked completed adds a "completed" class
+    //Creates a <div> element with the class todo and if the ToDoItem is marked completed adds a "completed" class
     let itemDiv = document.createElement("div");
+    itemDiv.classList.add("todo");
     if (item.isCompleted) {
         itemDiv.classList.add("completed");
     }

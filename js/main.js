@@ -22,7 +22,7 @@ function getToDoItem() {
     var myItem = new ToDoItem();
     myItem.task = $("task").value;
     myItem.dueDate = new Date($("due-date").value);
-    myItem.isCompleted = $("task").checked;
+    myItem.isCompleted = $("is-complete").checked;
     return myItem;
 }
 function displayToDoItem(item) {
@@ -31,6 +31,7 @@ function displayToDoItem(item) {
     var itemDate = document.createElement("p");
     itemDate.innerText = item.dueDate.toDateString();
     var itemDiv = document.createElement("div");
+    itemDiv.classList.add("todo");
     if (item.isCompleted) {
         itemDiv.classList.add("completed");
     }
