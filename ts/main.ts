@@ -59,6 +59,9 @@ function displayToDoItem(item:ToDoItem):void {
 
     //Creates a <div> element with the class todo and if the ToDoItem is marked completed adds a "completed" class
     let itemDiv = document.createElement("div");
+    
+    itemDiv.onclick = markAsComplete;
+
     itemDiv.classList.add("todo");
     if (item.isCompleted) {
         itemDiv.classList.add("completed");
@@ -76,7 +79,19 @@ function displayToDoItem(item:ToDoItem):void {
     }
 }
 
+/**
+ * shortcut function for document.getElementById()
+ * @param id the id of the HTML Element to retrieve
+ * @returns HTMLElement
+ */
 function $(id):HTMLElement {
     return document.getElementById(id);
 }
-//TODO: Allow user to mark a ToDoItem as completed
+
+function markAsComplete() {
+    let itemDiv = <HTMLDivElement>this;
+    itemDiv.classList.add("completed");
+    
+    let completeItems = $("complete-items");
+    completeItems.appendChild(itemDiv);
+}

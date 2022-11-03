@@ -2,10 +2,11 @@
     margin-top: 1em;
     margin-bottom: 1em;
     background-color: lightcoral;
-    width: 25%;
+    width: 15%;
     box-sizing: border-box;
     padding: .5em;
     border-radius: .5em;
+    cursor: pointer;
 }
 
 .todo h3 {
@@ -18,4 +19,5 @@
 
 .completed {
     background-color: lightgreen;
+    cursor: context-menu;
 }
